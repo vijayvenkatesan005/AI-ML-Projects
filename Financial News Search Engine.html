@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Search System</title>
+</head>
+<body>
+    <h1>Financial Search System</h1>
+
+    <p>Select an option to begin your search:</p>
+
+    <form action="/" method="POST" style="margin-bottom: 20px;">
+        <button type="submit" name="news">News</button>
+        <p>Search financial news from various news organizations.</p>
+    </form>
+
+    <form action="/" method="POST" style="margin-bottom: 20px;">
+        <button type="submit" name="historical_data">Historical Data</button>
+        <p>Look up historical stock market data for select companies.</p>
+    </form>
+    
+    <form action="/" method="POST" style="margin-bottom: 20px;">
+        <button type="submit" name="show_history">Search History</button>
+        <p>Review your past search queries.</p>
+    </form>
+
+    {% if show_search_history %}
+        <h2>Search History:</h2>
+        {% if search_history %}
+            <ul>
+                {% for query in search_history %}
+                    <li>{{ query }}</li>
+                {% endfor %}
+            </ul>
+
+            <form action="/" method="POST">
+                <button type="submit" name="clear_history">Clear History</button>
+                <p>Clear your search history.</p>
+            </form>
+            
+        {% else %}
+                <p>No Search History Available.</p>
+        
+        {% endif %}
+    {% endif %}
+
+
+    {% if clear_search_history %}
+
+        <p>No Search History Available.</p>
+                
+    {% endif %}
+
+    {% if show_news_form %}
+        
+        <h2>News Search:</h2>
+        <p>Select news sources and sentiment, then enter your query to search for relevant news articles.</p>
+        
+        <form action="/" method="POST">
+            <div>
+                <input type="checkbox" name="cnbc" {% if checked_state.cnbc %} checked {% endif %}>
+                <label for="cnbc">CNBC</label>
+            </div>
+        
+            <div>
+                <input type="checkbox" name="the_guardian" {% if checked_state.the_guardian %} checked {% endif %}>
+                <label for="the_guardian">The Guardian</label>
+            </div>
+        
+            <div>
+                <input type="checkbox" name="reuters" {% if checked_state.reuters %} checked {% endif %}>
+                <label for="reuters">Reuters</label>
+            </div>
+        
+            <div>
+                <label for="search_query">Search:</label>
+                <input type="text" id="search_query" name="search_query" required>
+            </div>
+        
+            <input type="hidden" name="news_search" value="true">
+
+            <label for="sentiment">Sentiment:</label>
+            <select name="sentiment" id="sentiment">
+                <option value="all">All</option>
+                <option value="positive">Positive</option>
+                <option value="negative">Negative</option>
+                <option value="neutral">Neutral</option>
+            </select>
+
+            <button type="submit">Search</button>
+            
+        </form>
+    
+    {% endif %}
+
+
+    {% if show_historical_data_form %}
+
+        <h2>Historical Data Search:</h2>
+        <p>Enter the company ticker symbol to retrieve historical stock market information.</p>
+        <form action="/" method="POST">
+            <div>
+                <label for="historical_search_query">Search:</label>
+                <input type="text" id="historical_search_query" name="historical_search_query" required>
+            </div>
+            <input type="hidden" name="historical_data_search" value="true">
+            <button type="submit">Search</button>
+        </form>
+    {% endif %}
+
+    {% if search_executed %}
+        {% if results %}
+            <h3>Search Results:</h3>
+            <p>Review the list of documents retrieved from your search below:</p>
+            <ul>
+                {% for result in results %}
+                    <li>
+                        
+                        
+                        {{ result|safe }}  
+                    
+                    </li>
+
+                {% endfor %}
+            </ul>
+
+            {% if related_searches %}
+                <h3>Related Searches:</h3>
+                <p>Consider the following queries that might be related to your search:</p>
+                <ul>
+                    {% for term in related_searches %}
+                        
+                        <li>{{ term }}</li>
+                    
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        
+        {% else %}
+            <p>Your query did not match any documents.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
