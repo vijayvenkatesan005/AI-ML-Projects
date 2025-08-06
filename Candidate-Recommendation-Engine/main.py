@@ -56,7 +56,7 @@ def generate_fit_explanation(job_desc, resume_text, llm):
         f"Job Description:\n{job_desc}\n\n"
         f"Candidate Resume:\n{resume_text}\n\n"
         "Based on the job description and this resume, "
-        "provide a concise explanation (2-4 sentences) of why this candidate is a strong fit for the role."
+        "provide a concise 1 sentence explanation of why this candidate is a strong fit for the role."
     )
 
     explanation = llm(prompt)
