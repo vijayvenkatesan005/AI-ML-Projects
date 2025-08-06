@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 Set your OpenAI API key securely:
 
-Locally: create a .streamlit/secrets.toml file using the below steps:
+Create a .streamlit/secrets.toml file using the below steps:
 
 OPENAI_API_KEY = "sk-xxxx..."
 On Streamlit Cloud: use the Secrets UI in app settings.
@@ -94,5 +94,6 @@ For demo purposes, LLM explanations are intentionally brief and can be further e
 Vijay Venkatesan
 
 Feel free to copy, adjust details, or let me know if you want any section rephrased or expanded!
+
 
 
