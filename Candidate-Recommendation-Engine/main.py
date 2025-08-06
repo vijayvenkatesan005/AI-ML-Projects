@@ -3,7 +3,6 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
-from secret_key import openai_api_key
 from langchain.llms import OpenAI
 import streamlit as st
 import os
