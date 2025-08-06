@@ -8,6 +8,7 @@ import streamlit as st
 import os
 import numpy as np
 import pandas as pd
+import tempfile
 
 r_splitter = RecursiveCharacterTextSplitter(
     separators=["\n\n", "\n", " "],
@@ -22,11 +23,19 @@ os.environ['OPENAI_API_KEY'] = openai_api_key
 
 llm = OpenAI(temperature=0.6)
 
-def extract_document_text(file_name):
-    loader = PyPDFLoader(file_name)
+def extract_document_text(pdf_file):
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmpfile:
+        tmpfile.write(pdf_file.read())
+        tmpfile_path = tmpfile.name
+     
+    loader = PyPDFLoader(tmpfile_path)
     pages = loader.load_and_split()
     page_content_list = [doc.page_content for doc in pages]
-    return "\n".join(page_content_list)
+    text = "\n".join(page_content_list)
+
+    os.remove(tmpfile_path)
+
+    return text
 
 def chunk_text(text):
     chunks = r_splitter.split_text(text)
@@ -135,7 +144,7 @@ if all_valid and job_description_processed:
         components = base_name.split("_")
         first_name, last_name = components[0].capitalize(), components[1].capitalize()
         full_name = f"{first_name} {last_name}"
-        resume_text = extract_document_text(file_name)
+        resume_text = extract_document_text(pdf_file)
         resume_texts[full_name] = resume_text
     
     for full_name, full_text in resume_texts.items():

@@ -5,3 +5,5 @@ sentence-transformers
 langchain
 langchain-community
 openai
+tempfile
+
