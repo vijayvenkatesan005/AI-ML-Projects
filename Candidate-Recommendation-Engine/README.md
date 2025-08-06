@@ -65,16 +65,16 @@ Pandas, Numpy (data processing)
 🔑 Setup & Requirements
 Clone this repo:
 
-bash git clone [https://github.com/your-username/your-repo.git](https://github.com/vijayvenkatesan005/AI-ML-Projects.git](https://github.com/vijayvenkatesan005/AI-ML-Projects.git)
+bash git clone https://github.com/vijayvenkatesan005/AI-ML-Projects.git
+
 Install dependencies:
 
 bash
 pip install -r requirements.txt
 Set your OpenAI API key securely:
 
-Locally: create a .streamlit/secrets.toml with
+Locally: create a .streamlit/secrets.toml file using the below steps:
 
-text
 OPENAI_API_KEY = "sk-xxxx..."
 On Streamlit Cloud: use the Secrets UI in app settings.
 
@@ -89,15 +89,7 @@ Dependencies are managed in requirements.txt—you do not need to install built-
 
 For demo purposes, LLM explanations are intentionally brief and can be further engineered for production.
 
-📄 Example Output
-Candidate	Similarity Score	Explanation
-John Smith	0.78	5 years Python experience, REST API dev, led ML projects for fintech.
-Priya Banerjee	0.75	AWS, SQL, and enterprise app development matching job requirements.
-...	...	...
 🙋♂️ Author
 Vijay Venkatesan
 
 Feel free to copy, adjust details, or let me know if you want any section rephrased or expanded!
-
-
-
