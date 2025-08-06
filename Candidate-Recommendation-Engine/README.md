@@ -64,8 +64,7 @@ Pandas, Numpy (data processing)
 🔑 Setup & Requirements
 Clone this repo:
 
-bash
-git clone https://github.com/your-username/your-repo.git](https://github.com/vijayvenkatesan005/AI-ML-Projects.git
+bash git clone [https://github.com/your-username/your-repo.git](https://github.com/vijayvenkatesan005/AI-ML-Projects.git](https://github.com/vijayvenkatesan005/AI-ML-Projects.git)
 Install dependencies:
 
 bash
@@ -98,4 +97,5 @@ Priya Banerjee	0.75	AWS, SQL, and enterprise app development matching job requir
 Vijay Venkatesan
 
 Feel free to copy, adjust details, or let me know if you want any section rephrased or expanded!
+
 
