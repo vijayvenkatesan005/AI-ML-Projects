@@ -11,7 +11,7 @@ User-Centric Design: Upload multiple resumes at once, specify display count, and
 
 Robust Cloud Deployment: Runs on Streamlit Community Cloud, no local setup required.
 
-🛠️ How It Works
+🛠️ How It Works:
 Upload Candidate Resumes
 
 Only PDF files named as firstName_lastName_resume.pdf are accepted for clarity and processing.
@@ -93,3 +93,4 @@ For demo purposes, LLM explanations are intentionally brief and can be further e
 Vijay Venkatesan
 
 Feel free to copy, adjust details, or let me know if you want any section rephrased or expanded!
+
