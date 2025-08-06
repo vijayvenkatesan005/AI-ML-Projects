@@ -83,10 +83,8 @@ Run locally:
 
 bash
 streamlit run Candidate-Recommendation-Engine/main.py
-⚠️ Notes
-PDF parsing depends on correct filename conventions and valid content.
 
-Dependencies are managed in requirements.txt—you do not need to install built-in modules like tempfile.
+Dependencies are managed in requirements.txt, you do not need to install built-in modules like tempfile.
 
 For demo purposes, LLM explanations are intentionally brief and can be further engineered for production.
 
@@ -94,6 +92,3 @@ For demo purposes, LLM explanations are intentionally brief and can be further e
 Vijay Venkatesan
 
 Feel free to copy, adjust details, or let me know if you want any section rephrased or expanded!
-
-
-
