@@ -1,4 +1,5 @@
 AI Resume Screening & Candidate Fit Summarizer
+
 This project is an interactive Streamlit web application to automate candidate shortlisting. It uses LLMs (OpenAI via LangChain) and advanced embeddings (Sentence Transformers) to rank uploaded resumes against a job description and generate concise, tailored explanations of candidate fit.
 
 🚀 Features
@@ -8,7 +9,7 @@ AI-Powered Fit Explanation: Each candidate receives a one-sentence, directly rel
 
 User-Centric Design: Upload multiple resumes at once, specify display count, and receive clear results in a table or downloadable CSV.
 
-Robust Cloud Deployment: Runs on Streamlit Community Cloud—no local setup required.
+Robust Cloud Deployment: Runs on Streamlit Community Cloud, no local setup required.
 
 🛠️ How It Works
 Upload Candidate Resumes
@@ -97,5 +98,6 @@ Priya Banerjee	0.75	AWS, SQL, and enterprise app development matching job requir
 Vijay Venkatesan
 
 Feel free to copy, adjust details, or let me know if you want any section rephrased or expanded!
+
 
 
